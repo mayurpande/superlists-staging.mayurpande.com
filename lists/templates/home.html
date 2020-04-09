@@ -8,7 +8,9 @@
     <h1>Your To-Do list</h1>
     <form method="POST" action="/lists/new">
         {% csrf_token %}
-        <input id="item_text" name="item_text" placeholder="Enter a to-do item"/>
+        <p style="text-align: center;">
+            <input id="item_text" name="item_text" placeholder="Enter a to-do item"/>
+        </p>
     </form>
 </body>
 </html>
