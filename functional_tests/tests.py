@@ -63,8 +63,9 @@ class NewVisitorTest(LiveServerTestCase):
         self.get_input_element('Use peacock feathers to make a fly')
 
         # The page updates again, and now shows both items on her list
-        self.wait_for_row_in_list_table('1: Buy peacock feathers')
         self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
+        self.wait_for_row_in_list_table('1: Buy peacock feathers')
+
 
         # satisfied she can go back to sleep
 
@@ -97,11 +98,11 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Francis starts a new list by entering a new item.
         self.get_input_element('Buy milk')
-        self.wait_for_row_in_list_table('1: Buy Milk')
+        self.wait_for_row_in_list_table('1: Buy milk')
 
         # Francis gets his own unique URL
         francis_list_url = self.browser.current_url
-        self.assertRegex(francis_list_url + '/lists/.+')
+        self.assertRegex(francis_list_url, '/lists/.+')
         self.assertNotEqual(francis_list_url, edit_list_url)
 
         # Again, there is no trace of Edith's list
