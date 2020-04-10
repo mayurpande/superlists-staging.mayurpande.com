@@ -1,9 +1,8 @@
 db.sqlite3
-tdd_book/geckodriver.log
-tdd_book/venv
-__pycache__
-tdd_book/*.pyc
+geckodriver.log
+venv
+*.pyc
 .idea
 env/
-
-tdd_book/static
+/static
+__pycache__
