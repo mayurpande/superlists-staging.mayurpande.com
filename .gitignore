@@ -6,3 +6,4 @@ tdd_book/*.pyc
 .idea
 env/
 
+tdd_book/static
