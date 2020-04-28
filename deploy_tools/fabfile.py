@@ -2,7 +2,7 @@ import random
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
 
-REPO_URL = 'https://github.com/hjwp/superlists-staging.mayurpande.com.git'
+REPO_URL = 'https://github.com/mayurpande/superlists-staging.mayurpande.com.git'
 
 
 def _get_latest_source():
