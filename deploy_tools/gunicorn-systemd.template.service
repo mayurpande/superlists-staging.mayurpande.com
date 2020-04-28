@@ -7,7 +7,7 @@ User=mayur
 WorkingDirectory=/home/mayur/sites/DOMAIN
 EnvironmentFile=/home/mayur/sites/DOMAIN/.env
 
-ExecStart=/home/mayur/sites/DOMAIN/virtualenv/bin/gunicorn --bind unix:/tmp/superlists-staging.mayurpande.com.socket \
+ExecStart=/home/mayur/sites/DOMAIN/virtualenv/bin/gunicorn --bind unix:/tmp/DOMAIN.socket \
     superlists.wsgi:application
 
 [Install]
