@@ -43,6 +43,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
         input_box.send_keys(todo_item)
         input_box.send_keys(Keys.ENTER)
 
+
     def test_can_start_a_list_for_one_user(self):
 
         # Edith has heard about a cool new online to-do app. She goes
