@@ -14,10 +14,10 @@ def _get_latest_source():
     run(f'git reset --hard {current_commit}')
 
 
-def _update_virtualenv():
-    if not exists('env/bin/pip'):
+def _update_virtualenv(site_folder):
+    if not exists(site_folder + '/env/bin/pip'):
         run(f'python3 -m venv env')
-    run('./env/bin/pip install -r requirements.txt')
+    run(site_folder + '/env/bin/pip install -r requirements.txt')
 
 
 def _create_or_update_dotenv():
@@ -44,7 +44,7 @@ def deploy():
     run(f'mkdir -p {site_folder}')
     with cd(site_folder):
         _get_latest_source()
-        _update_virtualenv()
+        #_update_virtualenv(site_folder)
         _create_or_update_dotenv()
         _update_static_files()
         _update_database()
