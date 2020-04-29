@@ -34,6 +34,18 @@ class FunctionalTest(StaticLiveServerTestCase):
                     raise e
                 time.sleep(0.5)
 
+
+    def wait_for(self, fn):
+
+        start_time = time.time()
+        while True:
+            try:
+                return fn()
+            except (AssertionError, WebDriverException) as e:
+                if time.time() - start_time > MAX_WAIT:
+                    raise e
+                time.sleep(0.5)
+
     def get_input_element(self, todo_item):
         input_box = self.browser.find_element_by_id('item_text')  # 1
         self.assertEqual(
