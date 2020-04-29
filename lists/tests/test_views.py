@@ -38,23 +38,13 @@ class LiveViewTest(TestCase):
         # going to pass into the render function—​the Django Test Client puts it on the response object for us,
         # to help with testing.
 
-
-class HomePageTest(TestCase):
-
-    def test_uses_home_template(self):
-        response = self.client.get('/')
-        self.assertTemplateUsed(response, 'home.html')
-
-
-class NewItemTest(TestCase):
-
     def test_can_save_a_POST_request_to_an_existing_list(self):
 
         other_list = List.objects.create()
         correct_list = List.objects.create()
 
         self.client.post(
-            f'/lists/{correct_list.id}/add_item',
+            f'/lists/{correct_list.id}/',
             data={'item_text': 'A new item for an existing list'}
         )
 
@@ -69,11 +59,18 @@ class NewItemTest(TestCase):
         correct_list = List.objects.create()
 
         response = self.client.post(
-            f'/lists/{correct_list.id}/add_item',
+            f'/lists/{correct_list.id}/',
             data={'item_text': 'A new item for an existing list'}
         )
 
         self.assertRedirects(response, f'/lists/{correct_list.id}/')
+
+
+class HomePageTest(TestCase):
+
+    def test_uses_home_template(self):
+        response = self.client.get('/')
+        self.assertTemplateUsed(response, 'home.html')
 
 
 class NewTestList(TestCase):
