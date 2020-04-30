@@ -47,13 +47,16 @@ class FunctionalTest(StaticLiveServerTestCase):
                 time.sleep(0.5)
 
     def get_input_element(self, todo_item):
-        input_box = self.browser.find_element_by_id('item_text')  # 1
+        input_box = self.browser.find_element_by_id('id_text')  # 1
         self.assertEqual(
             input_box.get_attribute('placeholder'),
             'Enter a to-do item'
         )
         input_box.send_keys(todo_item)
         input_box.send_keys(Keys.ENTER)
+
+    def get_item_input_box(self):
+        return self.browser.find_element_by_id('id_text')
 
 
 if __name__ == '__main__':
