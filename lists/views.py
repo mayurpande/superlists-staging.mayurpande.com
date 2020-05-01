@@ -13,7 +13,7 @@ from lists.forms import ItemForm, ExistingListItemForm
 #     form_class = ItemForm
 def home_page(request):
 
-    #return render(request, 'home.html', {'form': ItemForm()})
+    return render(request, 'home.html', {'form': ItemForm()})
 
 
 # class ViewAndAddToList(DetailView, CreateView):

@@ -7,12 +7,12 @@ from django.utils.html import escape
 from lists.models import Item, List
 from lists.forms import (
     ItemForm, EMPTY_ITEM_ERROR, ExistingListItemForm, DUPLICATE_ITEM_ERROR)
-
+# from lists.views import ViewAndAddToList
 from unittest import skip
 
 
 # Create your tests here.
-from lists.views import ViewAndAddToList
+
 
 
 class LiveViewTest(TestCase):
