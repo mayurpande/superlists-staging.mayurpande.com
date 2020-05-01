@@ -12,6 +12,9 @@ from unittest import skip
 
 
 # Create your tests here.
+from lists.views import ViewAndAddToList
+
+
 class LiveViewTest(TestCase):
 
     def test_uses_list_template(self):
@@ -155,3 +158,8 @@ class NewTestList(TestCase):
         response = self.client.post('/lists/new', data={'text': ''})
         self.assertIsInstance(response.context['form'], ItemForm)
 
+    # def test_cbv_get_correct_object(self):
+    #     our_list = List.objects.create()
+    #     view = ViewAndAddToList()
+    #     view.kwargs = dict(pk=our_list.id)
+    #     self.assertEqual(view.get_object(), our_list)
