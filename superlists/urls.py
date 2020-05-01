@@ -21,7 +21,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', list_views.home_page, name='home'),
+    #url(r'^$', list_views.home_page, name='home'),
+    url(r'^$', list_views.HomePageView.as_view(), name='home'),
     url(r'^lists/', include(list_urls)),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
