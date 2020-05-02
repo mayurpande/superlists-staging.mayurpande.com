@@ -7,3 +7,4 @@ env/
 /static
 __pycache__
 .env
+calc.py
