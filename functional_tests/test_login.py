@@ -4,7 +4,7 @@ import re
 
 from .base import FunctionalTest
 
-TEST_EMAIL = 'mayur_pande@hotmail.com'
+TEST_EMAIL = 'mayurpande.uk@gmail.com'
 SUBJECT = 'Your login link for superlists'
 
 class LoginTest(FunctionalTest):
