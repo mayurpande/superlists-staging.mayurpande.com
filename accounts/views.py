@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
-from django.urls import reverse
+from django.core.urlresolvers import reverse
 
 from accounts.models import Token
 
