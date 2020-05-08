@@ -12,9 +12,6 @@ from unittest import skip
 
 
 # Create your tests here.
-
-
-
 class LiveViewTest(TestCase):
 
     def test_uses_list_template(self):
@@ -163,3 +160,10 @@ class NewTestList(TestCase):
     #     view = ViewAndAddToList()
     #     view.kwargs = dict(pk=our_list.id)
     #     self.assertEqual(view.get_object(), our_list)
+
+
+class MyListsTest(TestCase):
+
+    def test_my_lists_url_renders_my_lists_template(self):
+        response = self.client.get('/lists/users/a@b.com/')
+        self.assertTemplateUsed(response, 'my_lists.html')
