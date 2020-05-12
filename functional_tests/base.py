@@ -46,7 +46,7 @@ class FunctionalTest(StaticLiveServerTestCase):
                 self._windowid = ix
                 self.take_screenshot()
                 self.dump_html()
-        self.browser.quiet()
+        self.browser.quit()
         super.tearDown()
 
     def _test_has_failed(self):
