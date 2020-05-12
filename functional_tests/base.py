@@ -51,7 +51,7 @@ class FunctionalTest(StaticLiveServerTestCase):
 
     def _test_has_failed(self):
         # slightly obscure but couldn't find a better way!
-        return any(error for (metho, error) in self._outcome.errors)
+        return any(error for (method, error) in self._outcome.errors)
 
     def take_screenshot(self):
         filename = self._get_filename() + '.png'
